@@ -1,0 +1,102 @@
+Class Activity 
+ 
+1.	There are syntax or logical errors in the C++ code given (a) and (b). Explain the reason why you are getting unexpected or negative numbers. Fix the error and submit the screenshot with right output and the code
+ 
+a.
+ 
+#include<iostream>
+#include<iomanip>
+ 
+using namespace std;
+ 
+int main()
+{
+    int* myListPtr = new int[10];
+    int* yourListPtr;
+    
+    for (int i = 0; i < 10; i++)
+        myListPtr[i] = i * (i - 1);
+    
+    yourListPtr = myListPtr;
+    
+    delete[] yourListPtr;
+    
+    for (int i = 0; i < 10; i++)
+        cout<< myListPtr[1] << " ";
+    cout << endl;
+}
+ 
+ 
+b.
+ 
+ 
+#include<iostream>
+#include<iomanip>
+ 
+using namespace std;
+ 
+int main()
+{
+    int* myPtr = new int;
+        int* yourPtr;
+        *myPtr = 5;
+        yourPtr = myPtr;
+        cout << *yourPtr << endl;
+        delete yourPtr;
+        cout << *myPtr << endl;
+          
+}
+ 
+ 
+ 
+2.	In the following code, both myList and yourList are dynamic arrays of the same size. The code initializes the array myList to certain values. Each element of yourList should be twice the value in the corresponding element in myList. However, the output of this code would show that this is not the case. Provide the correct code with a screenshot of the output to accomplish the desired results.
+ 
+#include <iostream>
+#include <string>
+#include <iomanip>
+ 
+using namespace std;
+ 
+int main()
+{
+    int *myList;
+    int *yourlist;
+    
+    myList = new int[5];
+    myList[0] = 8;
+    
+    for (int i = 1; i < 5; i++)
+    {
+        myList[i] = i * myList[i - 1];
+    }
+    
+    yourlist = myList;
+    for (int i = 0; i < 5; i++)
+    {
+        yourlist[i] = 2 * myList[i];
+        cout <<myList[i] <<" "<<yourlist[i]<<endl;
+        
+    }
+}
+    
+ 
+Submission: 
+ 
+Attach three screenshots (code & output side by side)
+ 
+Expected Output 1a
+ 
+0 2 6 12 20 30 42 56 72
+0 2 6 12 20 30 42 56 72
+ 
+Expected Output 1b 
+5
+5
+ 
+ 
+Expected Output 2
+myList 8 16 48 192
+yourList 16 32 96 384
+ 
+ 
+ 
