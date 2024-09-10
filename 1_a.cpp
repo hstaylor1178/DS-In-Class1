@@ -16,25 +16,32 @@ using namespace std;
 
 int main()
 {
-    int *myListPtr = new int[9];
+    int *myListPtr = new int[9]; // changed from 10 to 9 to cycle through 0<i<10
     int *yourListPtr;
     
-    for (int i = 0; i < 9; i++) // changed from i < 10 to i < 9 to cycle through 10 times
+    for (int i = 0; i < 9; i++) 
         myListPtr[i] = i * (i + 1); // changed from i-1 to i+1
-        
-        //cout << myListPtr[i] << " "; 
+    
     
     yourListPtr = myListPtr;
     
-    //delete[] myListPtr; // no reason to delete myListPtr
+    // print myListPtr
+    for (int i = 0; i < 9; i++)
+        cout<< myListPtr[i] << " ";
+    cout << endl;
     
+    // print yourListPtr
     for (int i = 0; i < 9; i++)
         cout<< yourListPtr[i] << " ";
     cout << endl;
+    
+    delete[] myListPtr; // moved this to the bottom, because it deleted it too early
 }
 
 
 /*
+Original: 
+
 int main()
 {
     int* myListPtr = new int[10];
