@@ -16,14 +16,11 @@ using namespace std;
 
 int main()
 {
-    int *myListPtr = new int[9];
+    int *myListPtr = new int[9]; // we only need 9 values
     int *yourListPtr;
     
     for (int i = 0; i < 9; i++) 
-        myListPtr[i] = i * (i + 1); // changed from i-1 to i+1
-        
-        //cout << myListPtr[i] << " "; 
-    
+        myListPtr[i] = i * (i + 1); // changed from i-1 to i+1   
     
     yourListPtr = myListPtr;
     
@@ -35,11 +32,15 @@ int main()
         cout<< yourListPtr[i] << " ";
     cout << endl;
     
-    delete[] myListPtr; 
+    delete[] myListPtr; // don't delete the pointer until after you're done using it
+	
+	   return 0; 
 }
 
 
-/*
+/* 
+Original: 
+
 int main()
 {
     int* myListPtr = new int[10];
