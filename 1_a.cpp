@@ -36,6 +36,8 @@ int main()
     cout << endl;
     
     delete[] myListPtr; // moved this to the bottom, because it deleted it too early
+
+    return 0; 
 }
 
 
